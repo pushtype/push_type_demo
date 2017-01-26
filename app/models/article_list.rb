@@ -5,7 +5,4 @@ class ArticleList < PushType::Node
   # any descendents by passing false.
   has_child_nodes :article, order: :blog
 
-  # Model the content by adding custom fields to the node.
-  # field :body, :text, validates: { presence: true }
-
 end

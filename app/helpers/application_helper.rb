@@ -1,5 +1,13 @@
 module ApplicationHelper
 
+  def title(str)
+    content_for :title, str
+  end
+
+  def meta(name, content)
+    content_for(:meta) { tag :meta, name: name.to_s, content: content }
+  end
+
   def body_class(node)
     classes = case node
       when ArticleList  then %w( home blog hfeed has-sidebar )

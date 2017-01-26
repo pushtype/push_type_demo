@@ -1,7 +1,7 @@
 admin:
   name: PushType Admin
   email: admin@example.com
-  password: password
+  password: pushtype
 
 categories:
   - title: Test category

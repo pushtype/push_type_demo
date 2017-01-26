@@ -10,6 +10,7 @@ class Article < PushType::Node
   field :category_id, :relation
   field :tags, :tag_list
 
+  # Scope to query nodes by category_id
   scope :in_category, ->(catgeory) {
     where(["field_store->>'category_id' = ?", catgeory.id])
   }

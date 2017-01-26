@@ -1,6 +1,6 @@
 {
   "name": "PushType Demo",
-  "description": "This PushType demo emulates a WordPress site to demonstrate approaches and aptterns to a few common problems.",
+  "description": "This app demonstrates some common patterns and solutions for structuring and modeling content using PushType. It emulates a basic WordPress site to show how a simple blog can be created very easily.",
   "keywords": ["pushtype", "rails", "ruby", "cms"],
   "website": "http://www.pushtype.org/",
   "repository": "https://github.com/pushtype/push_type_demo",

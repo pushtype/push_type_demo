@@ -5,9 +5,9 @@ class Category < PushType::Node
   # any descendents by passing false.
   has_child_nodes :category
 
+  # By default a node will use it's own named template within the
+  # application layout. This behaviour can be overidden and an
+  # alternative :layout option can be passed.
   template 'article_list'
-
-  # Model the content by adding custom fields to the node.
-  # field :body, :text, validates: { presence: true }
 
 end
