@@ -1,0 +1,18 @@
+admin:
+  name: PushType Admin
+  email: admin@example.com
+  password: password
+
+blog:
+  title: Posts
+  slug: blog
+
+articles:
+  - title: Worth A Thousand Words
+    slug: worth-a-thousand-words
+    body: |
+      <figure style="width: 435px" class="wp-caption alignnone">
+        <img class="wp-image-59" alt="Boat" src="https://wpdotorg.files.wordpress.com/2008/11/boat.jpg" width="435" height="288">
+        <figcaption class="wp-caption-text">Boat</figcaption>
+      </figure>
+      <p>Boat.</p>

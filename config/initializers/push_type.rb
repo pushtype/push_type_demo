@@ -3,12 +3,12 @@ PushType.setup do |config|
   # By default all node types can be placed at the root of the
   # content tree. Alternatively, set an array of node type symbols
   # to whiltelist acceptable root nodes.
-  config.root_nodes = :all
+  config.root_nodes = [:article_list, :category_list, :page]
 
   # Set the slug of the node that the `NodesFrontEndContoller` will
   # render when visting the root URL of the site (the homepage).
   # This setting can be overridden in config/routes.rb.
-  config.home_slug = 'home'
+  config.home_slug = 'blog'
 
   # Set an array of node type symbols which will not be exposed to
   # the `NodesFrontEndContoller`. These nodes will not be accessible
