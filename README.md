@@ -23,11 +23,10 @@ You can sign in to the PushType admin UI by entering the following address into 
 * Email: `admin@example.com`
 * Password: `pushtype`
 
-If you are hosting the site on Heroku, be mindful that any images and other media uploaded will not be persisted after a restart. Also no email service is configured.
+If you have deployed the demo to Heroku, be mindful that any images and other media uploads will not be persisted after a restart. Also no email service is configured.
 
 ## Theme
 
 The default WordPress theme (Twenty Seventeen) has been used to show how a simple WordPress-like site can be achieved.
 
-The Twenty Seventeen theme is distributed under the terms of the [GNU GPL](https://opensource.org/licenses/GPL-2.0).
-*Twenty Seventeen WordPress Theme, © Copyright 2017 WordPress.org*
+The Twenty Seventeen theme is distributed under the terms of the [GNU GPL](https://opensource.org/licenses/GPL-2.0). Twenty Seventeen WordPress Theme, Copyright 2017 WordPress.org.
