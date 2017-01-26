@@ -1,6 +1,6 @@
 # PushType demo
 
-This app demonstrates some common patterns and solutions for structuring and modeling content using PushType. It emulates a basic WordPress site to show how a simple blog can be created very easily.
+This app demonstrates some common patterns for structuring and modeling content using PushType. It emulates a basic WordPress site to show how a simple blog can be created very easily.
 
 ## How to use this demo
 
