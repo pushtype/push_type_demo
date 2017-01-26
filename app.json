@@ -1,7 +1,11 @@
 {
   "name": "PushType Demo",
   "description": "This PushType demo emulates a WordPress site to demonstrate approaches and aptterns to a few common problems.",
+  "keywords": ["pushtype", "rails", "ruby", "cms"],
+  "website": "http://www.pushtype.org/",
   "repository": "https://github.com/pushtype/push_type_demo",
   "logo": "http://www.pushtype.org/assets/pushtype-logo.png",
-  "keywords": ["pushtype", "rails", "ruby", "cms"]
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate db:seed"
+  }
 }
