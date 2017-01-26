@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require 2017/html5
+//= require 2017/screen-reader-text
+//= require 2017/skip-link-focus-fix
+//= require 2017/navigation
+//= require 2017/global
+//= require 2017/jquery.scrollTo
 //= require_tree .
+

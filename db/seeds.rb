@@ -10,8 +10,10 @@
 seed = File.join File.dirname(__FILE__), 'seed_data.yml'
 data = YAML.load_file(seed).deep_symbolize_keys
 
-admin = PushType::User.create! data[:admin].merge(confirmed_at: Time.zone.now)
+admin       = PushType::User.create! data[:admin].merge(confirmed_at: Time.zone.now)
+parent      = CategoryList.create title: 'Categories', slug: 'categories', status: PushType::Node.statuses[:published]
+categories  = Category.create! data[:categories].map { |c| c.merge status: PushType::Node.statuses[:published], parent_id: parent.id }
+blog        = ArticleList.create! title: 'Posts', slug: 'blog', status: PushType::Node.statuses[:published]
 
-blog = ArticleList.create! data[:blog].merge(creator: admin, updater: admin, status: PushType::Node.statuses[:published])
-Article.create! data[:articles].map { |a| a.merge creator: admin, updater: admin, status: PushType::Node.statuses[:published] }
-
+Page.create!    data[:pages].map    { |a| a.merge creator: admin, updater: admin, status: PushType::Node.statuses[:published] }
+Article.create! data[:articles].map { |a| a.merge creator: admin, updater: admin, status: PushType::Node.statuses[:published], parent_id: blog.id, category_id: categories.sample.id }

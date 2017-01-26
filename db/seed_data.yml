@@ -3,12 +3,25 @@ admin:
   email: admin@example.com
   password: password
 
-blog:
-  title: Posts
-  slug: blog
+categories:
+  - title: Test category
+    slug: test-category
+  - title: Another test category
+    slug: another-test-category
+
+pages:
+  - title: About
+    slug: about
+    body: |
+      <p>This is an example of a PushType page, you could edit this to put information about yourself or your site so readers know where you are coming from. You can create as many pages like this one or sub-pages as you like and manage all of your content inside of PushType.</p>
 
 articles:
-  - title: Worth A Thousand Words
+  - title: Hello world!
+    slug: hello-world
+    body: |
+      <p>Welcome to PushType. This is your first post. Edit or delete it, then start blogging!</p>
+    published_at: 2016-12-11 11:02:57
+  - title: Worth a thousand words
     slug: worth-a-thousand-words
     body: |
       <figure style="width: 435px" class="wp-caption alignnone">
@@ -16,3 +29,7 @@ articles:
         <figcaption class="wp-caption-text">Boat</figcaption>
       </figure>
       <p>Boat.</p>
+    tags:
+      - Boat
+      - Lake
+

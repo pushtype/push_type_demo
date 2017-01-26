@@ -1,14 +1,74 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>PushTypeDemo</title>
-    <%= csrf_meta_tags %>
+<html class="no-js no-svg">
+<head>
+<meta charset="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<title>PushTypeDemo</title>
+<%= csrf_meta_tags %>
 
-  <body>
-    <%= yield %>
-  </body>
+<link rel="stylesheet" id="twentyseventeen-fonts-css" href="" type="text/css" media="all">
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Libre+Franklin:300,300i,400,400i,600,600i,800,800i&amp;subset=latin,latin-ext', media: 'all' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+<%= yield :head %>
+</head>
+
+<body class="<%= body_class(@node) %>">
+  <div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    <header id="masthead" class="site-header" role="banner">
+      <div class="custom-header">
+
+        <div class="custom-header-media">
+          <div id="wp-custom-header" class="wp-custom-header">
+            <%= image_tag '2017/espresso.jpg', size: '2000x1200', alt: 'PushType Demo' %>
+          </div>
+        </div>
+
+        <div class="site-branding">
+          <div class="wrap">
+            <div class="site-branding-text">
+              <% if @node.is_a? ArticleList %>
+                <h1 class="site-title"><%= link_to 'PushType Demo', home_node_path, rel: 'home' %></h1>
+                <p class="site-description">Pretending to be another WordPress blog</p>
+              <% else %>
+                <p class="site-title"><%= link_to 'PushType Demo', home_node_path, rel: 'home' %></p>
+              <% end %>
+            </div><!-- .site-branding-text -->
+            <% if @node.is_a? ArticleList %>
+              <a href="#content" class="menu-scroll-down"><%= svg_icon('arrow-right') %><span class="screen-reader-text">Scroll down to content</span></a>
+            <% end %>
+          </div><!-- .wrap -->
+        </div><!-- .site-branding -->
+
+      </div><!-- .custom-header -->
+    </header><!-- #masthead -->
+
+    <div class="site-content-contain">
+
+      <div id="content" class="site-content">
+        <div class="wrap">
+          <%= yield %>
+        </div>
+      </div><!-- #content -->
+
+      <footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="wrap">
+          <div class="site-info">
+            <%= link_to 'Proudly powered by PushType', 'http://www.pushtype.org' %>
+          </div><!-- .site-info -->
+        </div><!-- .wrap -->
+      </footer><!-- #colophon -->
+
+    </div><!-- .site-content-contain -->
+  </div><!-- #page -->
+
+  <% cache asset_path('2017/svg-icons.svg') do %>
+    <%= embedded_svg '2017/svg-icons.svg' %>
+  <% end %>
+  <%= yield :foot %>
+</body>
 </html>

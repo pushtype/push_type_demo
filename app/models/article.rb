@@ -7,5 +7,11 @@ class Article < PushType::Node
 
   # Model the content by adding custom fields to the node.
   field :body, :wysiwyg, validates: { presence: true }
+  field :category_id, :relation
+  field :tags, :tag_list
+
+  scope :in_category, ->(catgeory) {
+    where(["field_store->>'category_id' = ?", catgeory.id])
+  }
 
 end

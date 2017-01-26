@@ -13,7 +13,7 @@ PushType.setup do |config|
   # Set an array of node type symbols which will not be exposed to
   # the `NodesFrontEndContoller`. These nodes will not be accessible
   # through their permalink.
-  config.unexposed_nodes = []
+  config.unexposed_nodes = [:category_list]
 
   # Media styles allow you to predefine a collection of geometry
   # strings for resizing images on the fly with the `Asset#media`

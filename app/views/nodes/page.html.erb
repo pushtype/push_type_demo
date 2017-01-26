@@ -1,5 +1,14 @@
-<h1><%= @node.title %></h1>
-<p>This is a generated Page template.</p>
-<p>Find me at: app/views/nodes/page.html.erb</p>
+<div id="primary" class="content-area">
+  <main id="main" class="site-main" role="main">
 
-  
+    <article id="post-<%= @node.id %>" class="<%= node_class @node %>">
+      <header class="entry-header">
+        <h1 class="entry-title"><%= @node.title %></h1>
+      </header><!-- .entry-header -->
+      <div class="entry-content">
+        <%= raw @node.body %>
+      </div><!-- .entry-content -->
+    </article><!-- #post-## -->
+
+  </main><!-- #main -->
+</div><!-- #primary -->

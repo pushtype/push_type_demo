@@ -1,0 +1,10 @@
+<% if items.present? %>
+  <section class="widget widget_recent_entries">
+    <h2 class="widget-title"><%= title %></h2>
+    <ul>
+      <% items.each do |article| %>
+        <li><%= link_to article.title, node_path(article.permalink) %></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>

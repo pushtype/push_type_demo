@@ -1,5 +1,37 @@
-<h1><%= @node.title %></h1>
-<p>This is a generated ArticleList template.</p>
-<p>Find me at: app/views/nodes/article_list.html.erb</p>
+<header class="page-header">
+  <h2 class="page-title"><%= @node.title %></h2>
+</header>
 
-  
+<div id="primary" class="content-area">
+  <main id="main" class="site-main" role="main">
+
+    <% @articles.each do |article| %>
+      <article id="post-<%= article.id %>" class="<%= node_class article %>">
+
+        <header class="entry-header">
+          <div class="entry-meta">
+            <span class="screen-reader-text">Posted on</span>
+            <%= time_tag(article.published_at, pubdate: true, class: 'entry-date published') { l article.published_at.to_date, format: :long } %>
+            <%= time_tag(article.updated_at, pubdate: false, class: 'updated') { l article.updated_at.to_date, format: :long } %>
+          </div><!-- .entry-meta -->
+
+          <h2 class="entry-title"><%= link_to article.title, node_path(article.permalink), rel: 'bookmark' %></h2>
+        </header><!-- .entry-header -->
+
+        <div class="entry-summary">
+          <%= raw article.body %>
+        </div><!-- .entry-summary -->
+
+      </article><!-- #post-## -->
+    <% end %>
+
+    <%= paginate @articles %>
+
+    <% if @articles.empty? %>
+      <p>It seems we can&rsquo;t find what you&rsquo;re looking for.</p>
+    <% end %>
+
+  </main><!-- #main -->
+</div><!-- #primary -->
+
+<%= render 'shared/sidebar' %>

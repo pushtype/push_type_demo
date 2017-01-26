@@ -1,5 +1,46 @@
-<h1><%= @node.title %></h1>
-<p>This is a generated Article template.</p>
-<p>Find me at: app/views/nodes/article.html.erb</p>
+<div id="primary" class="content-area">
+  <main id="main" class="site-main" role="main">
 
-  
+    <article id="post-<%= @node.id %>" class="<%= node_class @node %>">
+      <header class="entry-header">
+        <div class="entry-meta">
+          <span class="posted-on">
+            <span class="screen-reader-text">Posted on</span>
+            <%= time_tag(@node.published_at, pubdate: true, class: 'entry-date published') { l @node.published_at.to_date, format: :long } %>
+            <%= time_tag(@node.updated_at, pubdate: false, class: 'updated') { l @node.updated_at.to_date, format: :long } %>
+          </span>
+          <span class="byline"> by <span class="author vcard"><span class="url fn n"><%= @node.creator.name %></span></span></span>
+        </div><!-- .entry-meta -->
+        <h1 class="entry-title"><%= @node.title %></h1>
+      </header><!-- .entry-header -->
+
+      <div class="entry-content">
+        <%= raw @node.body %>
+      </div><!-- .entry-content -->
+
+      <% if @node.category || @node.tags %>
+        <footer class="entry-footer">
+          <span class="cat-tags-links">
+            <% if @node.category %>
+              <span class="cat-links">
+                <%= svg_icon 'folder-open', content_tag(:span, 'Categories', class: 'screen-reader-text') %>
+                <%= link_to @node.category.title, node_path(@node.category) %>
+              </span>
+            <% end %>
+            <% if @node.tags %>
+              <span class="tags-links">
+                <%= svg_icon 'hashtag', content_tag(:span, 'Tags', class: 'screen-reader-text') %>
+                <%= @node.tags.join(', ') %>
+              </span>
+            <% end %>
+          </span>
+        </footer>
+      <% end %>
+
+    </article><!-- #post-## -->
+
+  </main><!-- #main -->
+</div><!-- #primary -->
+
+
+<%= render 'shared/sidebar' %>
