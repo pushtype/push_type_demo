@@ -4,7 +4,7 @@ This app demonstrates some common patterns and solutions for structuring and mod
 
 ## How to use this demo
 
-The demo can be deployed to Heroku for free:
+The demo can be deployed to Heroku for free...
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/pushtype/push_type_demo)
 
@@ -20,8 +20,8 @@ You can sign in to the PushType admin UI by entering the following address into 
 
     http://<YOUR APP>.herokuapp.com/admin
 
-Email: `admin@example.com`
-Password: `pushtype`
+* Email: `admin@example.com`
+* Password: `pushtype`
 
 If you are hosting the site on Heroku, be mindful that any images and other media uploaded will not be persisted after a restart. Also no email service is configured.
 
